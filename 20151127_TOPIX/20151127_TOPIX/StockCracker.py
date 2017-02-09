@@ -81,4 +81,6 @@ if __name__ == '__main__':
     bx.plot(date_fx, data_fx['始値'][:], c='c')
     bx.set_ylabel('USDJPY', color='c', fontsize=20)
 
+    # calculate Beta Coefficient
+
     plt.show()
