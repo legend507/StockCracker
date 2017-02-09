@@ -48,6 +48,11 @@ class StockCracker:
         #print(allData) # output all data of target stock
         return allData
 
+    # calculate Beta coefficient
+    def calcBetaCoefficient(self):
+
+        return
+
 if __name__ == '__main__':
 
     sc = StockCracker()
