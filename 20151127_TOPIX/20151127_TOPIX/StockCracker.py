@@ -1,4 +1,6 @@
-﻿import pandas as pd
+﻿#!/usr/bin/env python
+# -*- coding: shift-JIS -*-
+import pandas as pd
 import numpy as np
 import matplotlib
 import datetime
@@ -51,7 +53,7 @@ class StockCracker:
     # calculate Beta coefficient
     def calcBetaCoefficient(self):
 
-        return
+        return 'Unfinished'
 
 if __name__ == '__main__':
 
