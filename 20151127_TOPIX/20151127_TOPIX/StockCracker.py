@@ -1,6 +1,4 @@
-﻿#!/usr/bin/env python
-# -*- coding: shift-JIS -*-
-import pandas as pd
+﻿import pandas as pd
 import numpy as np
 import matplotlib
 import datetime
@@ -50,10 +48,28 @@ class StockCracker:
         #print(allData) # output all data of target stock
         return allData
 
-    # calculate Beta coefficient
-    def calcBetaCoefficient(self):
+    # calculate Beta coefficient, 
+    def calcBetaCoefficient(self, stock, index):
+#### following example gives a good intuition about the quantitative  
+#        >>> a = np.array([1,3,9,6,5])
+#        >>> b = a + 100
+#        >>> b
+#        array([101, 103, 109, 106, 105])
+#        >>> np.cov(a,b,bias=1)
+#        array([[ 7.36,  7.36],
+#                [ 7.36,  7.36]])
+#        >>> b = a * 10
+#        >>> np.cov(a,b,bias=1)
+#        array([[   7.36,   73.6 ],
+#               [  73.6 ,  736.  ]])
+        dailyChange_stock = [(stock['始値'][idx+1] - stock['始値'][idx]) / stock['始値'][idx] for idx in range(len(stock) - 1)] # from 0 ~ len(stock)-1
+        dailyChange_index = [(index['始値'][idx+1] - index['始値'][idx]) / index['始値'][idx] for idx in range(len(index) - 1)] # from 0 ~ len(index)-1
 
-        return 'Unfinished'
+        matrix = np.cov(dailyChange_stock, dailyChange_index, bias=1)        
+        print(matrix)
+        beta = matrix[0][1] / matrix[1][1]
+
+        return beta
 
 if __name__ == '__main__':
 
@@ -84,5 +100,6 @@ if __name__ == '__main__':
     bx.set_ylabel('USDJPY', color='c', fontsize=20)
 
     # calculate Beta Coefficient
+    print(sc.calcBetaCoefficient(data_Mazda, data_Nikkei))
 
     plt.show()
