@@ -1,10 +1,10 @@
-﻿import pandas as pd
+import pandas as pd
 import numpy as np
-import matplotlib
 import datetime
+import os
+import matplotlib
 from matplotlib import pyplot as plt
 import seaborn as sns
-import os
 sns.set(style='ticks')
 
 from colorama import init
