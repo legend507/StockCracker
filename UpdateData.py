@@ -68,14 +68,14 @@ oFile.close()
 #---- get FX data
 try:
     h = httplib2.Http()    
-    resp, content = h.request("http://m2j.co.jp/market/pchistry_dl.php?ccy=1&type=d", "GET")
+    resp, content = h.request("http://www.m2j.co.jp/market/pchistry_dl.php?ccy=1&type=m", "GET")
 except:
     print("Using Proxy")
     h = httplib2.Http(
         proxy_info = httplib2.ProxyInfo(
             httplib2.socks.PROXY_TYPE_HTTP, 'proxy.mei.co.jp', 8080
             ) )
-    resp, content = h.request("http://m2j.co.jp/market/pchistry_dl.php?ccy=1&type=d", "GET")
+    resp, content = h.request("http://www.m2j.co.jp/market/pchistry_dl.php?ccy=1&type=m", "GET")
 
 oFile = open('./20151127_TOPIX/20151127_TOPIX/fx/USDJPY/USDJPY.csv', 'wb')
 oFile.write(content)
