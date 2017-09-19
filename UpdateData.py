@@ -65,10 +65,11 @@ oFile = open('./20151127_TOPIX/20151127_TOPIX/Round1/stocks_4680-T_1d_2017.csv',
 oFile.write(content)
 oFile.close()
 
-#---- get FX data
+#---- get FX data, notice several parameters should be set or resp will be 404
 try:
     h = httplib2.Http()    
-    resp, content = h.request("http://www.m2j.co.jp/market/pchistry_dl.php?ccy=1&type=m", "GET")
+    resp, content = h.request("http://www.m2j.co.jp/market/pchistry_dl.php?ccy=1&type=d", "GET", 
+                              headers={"accept-encoding":"gzip, deflate", "accept-language":"zh,ja;q=0.8,en-US;q=0.6,en;q=0.4", "referer":"http://www.m2j.co.jp/market/historical.php"})
 except:
     print("Using Proxy")
     h = httplib2.Http(
