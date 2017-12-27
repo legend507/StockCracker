@@ -10,3 +10,7 @@ df = pd.read_csv("./20151127_TOPIX/20151127_TOPIX/Bitcoin/test.csv",
 df["price"].plot()
 
 df.to_csv('./20151127_TOPIX/20151127_TOPIX/Bitcoin/BTC.csv')
+
+
+#--- ToDo: the following link seems usefull, but it uses json, Download use the following link!!!!
+https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20130428&end=20171227
