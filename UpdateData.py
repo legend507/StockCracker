@@ -81,3 +81,6 @@ except:
 oFile = open('./20151127_TOPIX/20151127_TOPIX/fx/USDJPY/USDJPY.csv', 'wb')
 oFile.write(content)
 oFile.close()
+
+
+#---- 20171227, Maybe it's a little late, but let's start analyzing Bitcoin!!!
