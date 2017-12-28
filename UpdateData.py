@@ -1,5 +1,6 @@
 import httplib2
 import sys
+from BTCUpdate import updateCryptoCurrencyData
 
 def UpdateData(url, savePath):
     try:
@@ -32,6 +33,7 @@ except:
 oFile = open('./20151127_TOPIX/20151127_TOPIX/Nikkei/indices_I101_1d_2017.csv', 'wb')
 oFile.write(content)
 oFile.close()
+print("Stock: 日経 Index Updated")
 
 #---- get Mazda data
 try:
@@ -48,6 +50,8 @@ except:
 oFile = open('./20151127_TOPIX/20151127_TOPIX/Mazda/stocks_7261-T_1d_2017.csv', 'wb')
 oFile.write(content)
 oFile.close()
+print("Stock: Mazda Updated")
+
 
 #---- get Round1 data
 try:
@@ -64,6 +68,7 @@ except:
 oFile = open('./20151127_TOPIX/20151127_TOPIX/Round1/stocks_4680-T_1d_2017.csv', 'wb')
 oFile.write(content)
 oFile.close()
+print("Stock: Round1 Updated")
 
 #---- get FX data, notice several parameters should be set or resp will be 404
 try:
@@ -81,6 +86,8 @@ except:
 oFile = open('./20151127_TOPIX/20151127_TOPIX/fx/USDJPY/USDJPY.csv', 'wb')
 oFile.write(content)
 oFile.close()
-
+print("FX: USDJPY Updated")
 
 #---- 20171227, Maybe it's a little late, but let's start analyzing Bitcoin!!!
+# Calling function in BTCUpdate.py
+updateCryptoCurrencyData()
