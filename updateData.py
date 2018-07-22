@@ -3,8 +3,8 @@
 
 This script does the following errands:
 1. automatically download stock market data (.csv), and save the data under ./data/stock/*
-(ToDo) 2. automatically download FX data, 
-(ToDo) 3. automatically download BitCoin data, 
+2. automatically download FX data, 
+3. automatically download BitCoin data, 
 '''
 
 from pandas_datareader import data as pdr
