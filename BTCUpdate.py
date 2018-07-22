@@ -21,7 +21,9 @@ import os
 import time as mod_time
 # 
 ############### SET PATHS FOR CSV FILES
-dataPath=desktop = os.path.expanduser("./20151127_TOPIX/20151127_TOPIX/CryptoCurrency/BTC/")
+path = './data/CryptoCurrency/BTC/'
+os.makedirs(path, exist_ok=True)
+dataPath=desktop = os.path.expanduser(path)
 
  
  ################### FUNCTIONS ###########################
@@ -31,7 +33,7 @@ def timestamp2date(timestamp):
  
 def date2timestamp(date):
     # function coverts Gregorian date in a given format to timestamp
-    return datetime.strptime(date_today, '%Y-%m-%d').timestamp()
+    return datetime.strptime(date, '%Y-%m-%d').timestamp()
  
 def fetchCryptoOHLC(fsym, tsym):
     # function fetches a crypto price-series for fsym/tsym and stores
@@ -103,7 +105,7 @@ def updateCryptoCurrencyData():
     df.MarketCap = pd.to_numeric(df.MarketCap)
 
     P = df[df.MarketCap > 40e6]  #only coins above 40 mill cap (customize as you wish)
-    P.to_csv(os.path.join(dataPath,"CryptoTickersByCap.txt"),",");
+    P.to_csv(os.path.join(dataPath,"CryptoTickersByCap.txt"),",")
     #print(P)#, end="\n\n")
     
     portfolio = list(P.Ticker)
