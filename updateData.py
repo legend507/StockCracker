@@ -26,6 +26,8 @@ tickets = {
            '4680.T':    './data/stock/round1/',             # Round 1, Nikkei
            #--- Consumer Electronics Maker
            '6752.T':    './data/stock/panasonic/',          # Panasonic, Nikkei
+           '6758.T':    './data/stock/sony/',               # Sony, Nikkei
+           '3993.T':    './data/stock/pksha/',              # PKSHA, Toyota owned AI software company, Nikkei
            }
 
 # set start, end date, begin download data
