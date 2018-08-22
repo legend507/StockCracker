@@ -14,7 +14,7 @@ import os
 
 #--------------- Stock Data -------------------------
 # target stock names, and save path
-tickets = {
+tickers = {
            #--- Index
            '^N225':     './data/stock/nikkei/',             # Nikkei 225 Index
            #--- Vehicle OEMs
@@ -39,7 +39,7 @@ yf.pdr_override()
 start = dt.datetime(2000, 1, 1)
 end = dt.datetime.today()
 
-for key, value in tickets.items():
+for key, value in tickers.items():
     try:
         print('Getting: ' + key)
         data = pdr.get_data_yahoo(key, start=start, end=end)

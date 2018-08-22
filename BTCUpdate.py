@@ -2,11 +2,12 @@
 #"""
 #Created on Sun Apr 30 09:25:59 2017
 #
-#@author: Vangelis
+#@author: Feiyu CHEN
 #"""
 
 ##original code by Pawel Lachowicz, QuantAtRisk.com,
 ## adapted by Vangelis@sanzprophet.com 
+## revised by Feiyu CHEN
 # 
 import numpy as np
 import pandas as pd
