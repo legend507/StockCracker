@@ -48,7 +48,7 @@ end = dt.datetime.today()
 
 for key, value in tickers.items():
     try:
-        print('Getting: ' + key)
+        print('Getting: ' + key + ' | ' + value[13:-1])
         data = pdr.get_data_yahoo(key, start=start, end=end)
         #print(data)
     except:
