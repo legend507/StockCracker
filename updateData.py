@@ -33,12 +33,48 @@ tickers = {
            '6501.T':    './data/stock/hitachi/',            # Hitachi, Nikkei
            '7731.T':    './data/stock/nikon/',              # Nikon camera maker, Nikkei
            '7751.T':    './data/stock/canon/',              # Canon camera maker, Nikkei
+           '6902.T':    './data/stock/denso/',              # Denso, Toyota's bitch, Nikkei
+           '6503.T':    './data/stock/mitsubishi-electric/',# Mitsubishi-electric, 
            #--- Tech
            '9984.T':    './data/stock/softbank/',           # Softbank, 
            '9613.T':    './data/stock/nttdata/',            # NTT Data
+           '9432.T':    './data/stock/ntt/',                # NTT
            '3807.T':    './data/stock/fisco/',              # Fisco, making investing tools, Nikkei
+           '4716.T':    './data/stock/oracle/',             # Oracle Japan, Nikkei
+           '4755.T':    './data/stock/rakuten/',            # Rakuten, 
+           '9433.T':    './data/stock/kddi/',               # KDDI, 
+           '3966.T':    './data/stock/uzabase/',            # UZABASE, news/fiance analyzor
+           '6146.T':    './data/stock/disco/',              # Disco, material/device maker
+           '3655.T':    './data/stock/brainpad/',           # BrainPad, some big data company
            #--- Banking
            '8411.T':    './data/stock/mizuho/',             # Mizuho Finance Group, Nikkei
+           '8306.T':    './data/stock/mitsubishi-ufj/',     # Mitsubishi UFJ
+           '8316.T':    './data/stock/smfg/',               # 住友 Finance Group
+           #--- Food & Drinks
+           '2579.T':    './data/stock/coca-cola/',          # Coca Cola Japan Holdings, 
+           '2587.T':    './data/stock/suntory/',            # Suntory
+           '2502.T':    './data/stock/asahi/',              # Asahi
+           #--- Service
+           '6098.T':    './data/stock/recruit/',            # Recruit
+           '6178.T':    './data/stock/jppost/',             # 日本郵政
+           '9603.T':    './data/stock/his/',                # H.I.S
+           #--- Retail
+           '8267.T':    './data/stock/aeon/',               # AEON, supermarket,
+           #--- Transportation
+           '9202.T':    './data/stock/ana/',                # ANA airline
+           '9201.T':    './data/stock/jal/',                # JAL airline
+           '9020.T':    './data/stock/jr-east/',            # East Japan Railway
+           '9021.T':    './data/stock/jr-west/',            # West Japan Railway
+           #--- Chemistry
+           '4911.T':    './data/stock/shiseido/',           # 資生堂
+           '4901.T':    './data/stock/fujifilm/',           # Fuji Film
+           '3402.T':    './data/stock/toray/',              # 東レ
+           #--- Trading 
+           '8001.T':    './data/stock/idochu/',             # 伊藤忠商事
+           #--- Insurance
+           '8766.T':    './data/stock/tokiomarine/',        # 東京海上日動
+           #--- Oil
+           '5020.T':    './data/stock/jxtg/',               # JXTG, 
            }
 
 # set start, end date, begin download data
