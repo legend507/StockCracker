@@ -25,13 +25,20 @@ tickers = {
            #--- Entertainmen
            '4680.T':    './data/stock/round1/',             # Round 1, Nikkei
            '2412.T':    './data/stock/benefitone/',         # BenefitOne, Nikkei
+           '7494.T':    './data/stock/nintendo/',           # Nintendo, game company, Nikkei
            #--- Consumer Electronics Maker
            '6752.T':    './data/stock/panasonic/',          # Panasonic, Nikkei
            '6758.T':    './data/stock/sony/',               # Sony, Nikkei
            '3993.T':    './data/stock/pksha/',              # PKSHA, Toyota owned AI software company, Nikkei
+           '6501.T':    './data/stock/hitachi/',            # Hitachi, Nikkei
+           '7731.T':    './data/stock/nikon/',              # Nikon camera maker, Nikkei
+           '7751.T':    './data/stock/canon/',              # Canon camera maker, Nikkei
            #--- Tech
            '9984.T':    './data/stock/softbank/',           # Softbank, 
            '9613.T':    './data/stock/nttdata/',            # NTT Data
+           '3807.T':    './data/stock/fisco/',              # Fisco, making investing tools, Nikkei
+           #--- Banking
+           '8411.T':    './data/stock/mizuho/',             # Mizuho Finance Group, Nikkei
            }
 
 # set start, end date, begin download data
