@@ -35,6 +35,7 @@ tickers = {
            '7751.T':    './data/stock/canon/',              # Canon camera maker, Nikkei
            '6902.T':    './data/stock/denso/',              # Denso, Toyota's bitch, Nikkei
            '6503.T':    './data/stock/mitsubishi-electric/',# Mitsubishi-electric, 
+           '6502.T':    './data/stock/toshiba/',            # Toshiba, seems they are coming back    
            #--- Tech
            '9984.T':    './data/stock/softbank/',           # Softbank, 
            '9613.T':    './data/stock/nttdata/',            # NTT Data
@@ -46,6 +47,8 @@ tickers = {
            '3966.T':    './data/stock/uzabase/',            # UZABASE, news/fiance analyzor
            '6146.T':    './data/stock/disco/',              # Disco, material/device maker
            '3655.T':    './data/stock/brainpad/',           # BrainPad, some big data company
+           '4385.T':    './data/stock/mercari/',            # Mercari, a mobile app eCommerce company
+           '3092.T':    './data/stock/zozo/',               # ZOZO, eCommerce company
            #--- Banking
            '8411.T':    './data/stock/mizuho/',             # Mizuho Finance Group, Nikkei
            '8306.T':    './data/stock/mitsubishi-ufj/',     # Mitsubishi UFJ
@@ -75,6 +78,12 @@ tickers = {
            '8766.T':    './data/stock/tokiomarine/',        # 東京海上日動
            #--- Oil
            '5020.T':    './data/stock/jxtg/',               # JXTG, 
+           #--- TV
+           '9413.T':    './data/stock/tv-tokyo/',           # TV Tokyo
+           '9409.T':    './data/stock/tv-asahi/',           # TV Asahi
+           #--- Media
+           '2371.T':    './data/stock/kakaku/',             # Kakaku.com
+
            }
 
 # set start, end date, begin download data
@@ -82,6 +91,7 @@ yf.pdr_override()
 start = dt.datetime(2000, 1, 1)
 end = dt.datetime.today()
 
+print('Downloading: Stock data')
 for key, value in tickers.items():
     try:
         print('Getting: ' + key + ' | ' + value[13:-1])
@@ -98,6 +108,8 @@ for key, value in tickers.items():
 #--------------- FX Data -------------------------
 import httplib2
 import sys
+
+print('Downloading: FX data')
 # get FX data, notice several parameters should be set or resp will be 404
 try:
     h = httplib2.Http()    
@@ -117,8 +129,8 @@ os.makedirs(path, exist_ok=True)
 oFile = open(path + 'data.csv', 'wb')
 oFile.write(content)
 oFile.close()
-print("FX: USDJPY Updated")
 
+print('Downloading: BitCoin data')
 #--------------- BitCoin Data -------------------------
 from BTCUpdate import updateCryptoCurrencyData
 updateCryptoCurrencyData()
