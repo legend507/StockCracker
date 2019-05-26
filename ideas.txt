@@ -1,0 +1,3 @@
+This doc summarizes some ideas,
+1. focus only on index 225, to find the overall trend of Japan stock market; after that check industry wise stock performance (e.g., manufacture, TV media, IT, service, etc.); use the up trend, sideway trend, down trend to find the best field to invest in.
+2. 

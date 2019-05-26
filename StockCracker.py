@@ -1,28 +1,9 @@
 import numpy as np
 np.set_printoptions(threshold=np.nan)
 import pandas as pd
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', None)
-pd.set_option('display.width', 1000)
-#---- matplotlib, my old favorite...
-import matplotlib
-from matplotlib import pyplot as plt
-import seaborn as sns
-sns.set(style='ticks')
-#---- for Bokeh, a ploter
-import bokeh.plotting as bp
-from bokeh.layouts import gridplot, column
-from bokeh.models import LinearAxis, DataRange1d, HoverTool, BoxSelectTool
-TOOLS = ["pan,wheel_zoom,box_zoom,reset,crosshair, hover, box_select"]
-bp.output_notebook()
-#---- for color, style print in iPython
-from IPython.display import HTML, display
 import datetime
 import os
-#---- for colorful print
-from colorama import init
-init(autoreset=True)
-from colorama import Fore, Back, Style
+
 #---- for statistics
 from scipy import stats
 
@@ -196,7 +177,41 @@ class StockCracker:
             end = len(stock)
         return stock[start:end]
     #-------------
-    # 计算LinearRegression
+    # 计算LinearRegression [WIP]
     #-------------
     def calcSlope(self, data):
         return
+    
+    #-------------    
+    # Relative strength index, 
+    #-------------
+    def keyIndicator_RSI(self, stock, N=14):
+        # create an array
+        RSI = np.full(len(stock), 100.)
+        # calculate RSI_0 for first N days
+        gain = 0
+        loss = 0
+        for i in range(N):
+            today = stock[self.label.CLOSE].iloc[i] - stock[self.label.OPEN].iloc[i]
+            # closs >= open, gain
+            if today >= 0:
+                gain += today
+            else:
+                loss -= today
+        avg_gain = gain / N
+        avg_loss = loss / N
+        if avg_loss != 0:
+            RSI[N] = 100 - 100 / (1 + avg_gain / avg_loss)
+        
+        # calculate the following 
+        for i in range(N+1, len(stock)):
+            today = stock[self.label.CLOSE].iloc[i] - stock[self.label.OPEN].iloc[i-1]
+            if today >= 0:
+                avg_gain = (avg_gain * 13 + today) / 14
+                avg_loss = (avg_loss * 13 + 0) / 14
+            else:
+                avg_gain = (avg_gain * 13 + 0) / 14
+                avg_loss = (avg_loss * 13 - today) / 14
+            if avg_loss != 0:
+                RSI[i] = 100 - 100 / (1 + avg_gain / avg_loss)
+        return RSI
