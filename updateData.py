@@ -6,7 +6,6 @@ This script does the following errands:
 2. automatically download FX data, 
 3. automatically download BitCoin data, 
 '''
-
 from pandas_datareader import data as pdr
 import fix_yahoo_finance as yf              # need to install this with pip, refer to https://pypi.org/project/fix-yahoo-finance/
 import datetime as dt
