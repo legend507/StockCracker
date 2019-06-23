@@ -1,3 +1,6 @@
+"""This script merge all downloaded stock data into one large pandas dataframe. 
+"""
+
 from updateData import Tickers
 from StockCracker import StockCracker
 from StockCracker import LabelManager
